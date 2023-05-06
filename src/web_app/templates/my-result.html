@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/result.css') }}">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Results</title>
+    </head>
+
+    <!-- Add some style to table (OPTIONAL) -->
+    <style type="text/css">
+
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+        th:tr{
+            color: blue;
+        }
+
+        tr:nth-of-type(2n){
+            border: 1px solid black;
+            background-color: rgba(150, 150, 150);
+        }
+
+        tr:nth-of-type(2n+1){
+            border: 1px solid black;
+            background-color: rgb(255, 255, 255);
+        }
+
+        td{
+            padding: 8px 8px;
+            border: 1px solid black;
+        }
+    </style>
+
+    <body>
+        <img src="{{ url_for('static', filename='images/image.jpg') }}" alt="Solar Panel Background Image" class="backimg">
+        <img src="{{ url_for('static', filename='images/R.png') }}" alt="Sustainable New Jersey Logo" class="SNJ">
+        <img src="{{ url_for('static', filename='images/TCNJ-Comp-FULL-B-RGB.png') }}" alt="TCNJ Logo" class="TCNJ">
+        <div class="filter">
+            <a href="{{ url_for('query') }}" class="btn">New Selection?</a>
+            <div class="table-container">
+                <table class="table-1">
+                    <thead>
+                        <tr>
+                        {%for head in table1heads%}
+                            <th>{{ head }}</th>
+                        {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in table1rows %}
+                        <tr>
+                        {% for col in row %}
+                            <td>{{ col }}</td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+
+                <table class="table-2">
+                    <thead>
+                        <tr>
+                        {%for head in table2heads%}
+                            <th>{{ head }}</th>
+                        {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in table2rows %}
+                        <tr>
+                        {% for col in row %}
+                            <td>{{ col }}</td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <table class="table-3">
+                    <thead>
+                        <tr>
+                        {%for head in table3heads%}
+                            <th>{{ head }}</th>
+                        {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in table3rows %}
+                        <tr>
+                        {% for col in row %}
+                            <td>{{ col }}</td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <table class="table-4">
+                    <thead>
+                        <tr>
+                        {%for head in table4heads%}
+                            <th>{{ head }}</th>
+                        {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in table4rows %}
+                        <tr>
+                        {% for col in row %}
+                            <td>{{ col }}</td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <br/>
+            </div>
+            <br/>
+        </div>
+    </body>
+</html>

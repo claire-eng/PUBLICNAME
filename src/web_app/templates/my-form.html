@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/form.css') }}?v={{ random_string }}">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CAB Project 2</title> <!--Change-->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        </style>          
+    </head>
+    <body>
+        <div class ="vid-contain">
+            <video id="vid" class="home-video" src="{{ url_for('static', filename='videos/Solar Panel Farm Stock Footage I Solar Energy Free Stock Footage No Copyright.mp4') }}" autoplay muted loop></video>
+        </div>
+
+        <div class ="Content">
+        <img src="{{ url_for('static', filename='images/R.png') }}" alt="Sustainable New Jersey Logo" class="SNJ">
+        <img src="{{ url_for('static', filename='images/TCNJ-Comp-FULL-B-RGB.png') }}" alt="TCNJ Logo" class="TCNJ">
+	        <h1>A more sustainable New Jersey is just a click away.</h1>
+                <a href="{{ url_for('query') }}" class="btn">Get Started</a>
+        </div>
+        <script>
+            var vid = document.getElementById("vid");
+            vid.addEventListener("timeupdate", function () {
+                if(this.currentTime >= 14.0) {
+                    this.currentTime = 5.0;
+                }
+            });
+        </script>
+    </body>
+</html>

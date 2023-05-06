@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:white;
+    display: block;
+    overflow: hidden;
+}
+
+.home-video{
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Content{
+    font-family: 'Raleway', sans-serif;
+}
+
+.Content:before{
+    z-index: 1;
+    content: '';
+    position: absolute;
+    background: rgba(77,255,255, 0.42);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.Content h1{
+    z-index: 81;
+    position: absolute;
+    animation-name: slide-in;
+    animation-duration: 2.5s;
+    animation-timing-function:ease;
+    animation-fill-mode: forwards;
+    top: 26%;
+    text-shadow: 2px 2px 4px #000;
+    color: white;
+}
+
+.Content h1{
+    font-size: 5.15em;
+    font-weight: 900;
+    text-transform: uppercase;
+    max-width: 1080px;
+    line-height: 0.95;
+    margin: 20px;
+}
+
+.Content a{
+    z-index: 81;
+    position: absolute;
+    animation-name: slide-in-r;
+    animation-duration: 2.5s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+    top: 69%;
+    right: 50%;
+    text-transform: uppercase;
+}
+
+.btn {
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+    background-color: white;
+    font-size: 2.7em;
+    font-weight: 400;
+    border: 3px solid #000;
+    border-radius: 5px;
+    color:black;
+    padding: 10px 30px 10px 30px;
+    letter-spacing: 3px;
+    transition: border 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    border: 3px solid #FFF;
+    background-color: black;
+    color: white;
+}
+
+
+.Content .TCNJ{
+    z-index: 81;
+    position: absolute;
+    width: 10%;
+    height: auto;
+    top: 88%;
+    left: 0;
+    animation-name: fade-in-img;
+    animation-duration: 1.2s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+}
+
+.Content .SNJ{
+    z-index: 81;
+    position: absolute;
+    width: 6.8%;
+    height: auto;
+    top: 90%;
+    left: 10%;
+    animation-name: fade-in-img;
+    animation-duration: 1.2s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+}
+
+
+@keyframes slide-in{
+    
+    0%{
+        left: -100%;
+    }
+    100% {
+        left: 7%;
+    }
+}
+
+@keyframes slide-in-r{
+    0%{
+        right: -100%;
+    }
+    100% {
+        right: 8.2%;
+    }
+}
+
+@keyframes fade-in-img{
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

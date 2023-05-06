@@ -1,0 +1,163 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-color:white;
+  display: block;
+  overflow: hidden;
+}
+
+.backimg {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+  animation-name: fade-in-img;
+  animation-duration: 0.7s;
+  animation-timing-function:ease;
+  animation-fill-mode: forwards;
+}
+
+.filter:before {
+  z-index: 1;
+  content: '';
+  position: absolute;
+  background: rgba(77,255,255, 0.42);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.filter .test, .filter .test2, .filter .test3, .filter .test4, .filter .test5, .filter .test6, .filter .btn, .filter h1, .filter label, .TCNJ, .SNJ, .filter input {
+  position: absolute;
+  z-index: 2;
+}
+
+.filter .test, .filter .test2, .filter .test3, .filter .test4, .filter .test5, .filter .test6{
+  left: -100;
+}
+
+.TCNJ{
+  width: 10%;
+  height: auto;
+  top: 88%;
+  left: 0;
+  animation-name: fade-in-img;
+  animation-duration: 0.7s;
+  animation-timing-function:ease;
+  animation-fill-mode: forwards;
+}
+
+.SNJ{
+  width: 6.8%;
+  height: auto;
+  top: 90%;
+  left: 10%;
+  animation-name: fade-in-img;
+  animation-duration: 0.7s;
+  animation-timing-function:ease;
+  animation-fill-mode: forwards;
+}
+
+
+.select-container label {
+  font-family: 'Jockey One', sans-serif;
+  font-size: 2.95em;
+  font-weight: 550;
+  letter-spacing: 1px;
+  z-index: 3;
+  position:absolute;
+  width: 60%;
+  animation-name: fade-in-img;
+  animation-duration: 2.0s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  top: 20%;
+  left: 20%;
+}
+
+
+.select-container2 label{
+  font-family: 'Jockey One', sans-serif;
+  font-size: 2.95em;
+  font-weight: 550;
+  letter-spacing: 1px;
+  z-index: 3;
+  position:absolute;
+  width: 60%;
+  animation-name: fade-in-img;
+  animation-duration: 2.0s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  top: 35%;
+  left: 20%;
+}
+
+
+.select-container3 label{
+  font-family: 'Jockey One', sans-serif;
+  font-size: 2.95em;
+  font-weight: 550;
+  letter-spacing: 1px;
+  z-index: 3;
+  position:absolute;
+  width: 60%;
+  animation-name: fade-in-img;
+  animation-duration: 2.0s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  top: 50%;
+  left: 20%;
+}
+
+
+.btn {
+  font-family: 'Bebas Neue', cursive;
+  text-decoration: none;
+  background-color: white;
+  font-size: 2.7em;
+  font-weight: 400;
+  border: 3px solid #000;
+  border-radius: 5px;
+  color:black;
+  padding: 10px 30px 10px 30px;
+  letter-spacing: 3px;
+  animation-name: fade-in-img;
+  animation-duration: 2.0s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  transition: border 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+  margin-top: 20px;
+  left: 45%;
+  top: 65%;
+}
+
+.btn:hover {
+  border: 3px solid #FFF;
+  background-color: black;
+  color: white;
+}
+
+.filter  {
+  z-index: 3;
+}
+
+
+@keyframes fade-in-img{
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

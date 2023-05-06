@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/query.css') }}">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Query</title>
+        <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
+        <link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet"></link>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        </style>  
+    </head>
+    <body>
+        <img src="{{ url_for('static', filename='images/image.jpg') }}" alt="Solar Panel Background Image" class="backimg">
+        <img src="{{ url_for('static', filename='images/R.png') }}" alt="Sustainable New Jersey Logo" class="SNJ">
+        <img src="{{ url_for('static', filename='images/TCNJ-Comp-FULL-B-RGB.png') }}" alt="TCNJ Logo" class="TCNJ">
+        <div class = "filter">
+            <form action="/query-handler" method="POST" id="theWorks">
+                <input type="hidden" name="test" id="test" class="test" value=""/>
+                <input type="hidden" name="test2" id="test2" class="test2" value=""/>
+                <input type="hidden" name="test3" id="test3" class="test3" value=""/>
+                <input type="hidden" name="test4" id="test4" class="test4" value=""/>
+                <input type="hidden" name="test5" id="test5" class="test5" value=""/>
+                <input type="hidden" name="test6" id="test6" class="test6" value=""/>
+                <a href="#" class="btn" id = "btn" onclick="document.getElementById('theWorks').submit();">Submit</a>
+
+                <div class="select-container">
+                <label>Municipalities 
+                    <select name="Municipalities" id="municipOpt" multiple>
+                            <option value ="Aberdeen Township">Aberdeen Township</option>
+                            <option value ="Absecon">Absecon</option>
+                            <option value ="Absecon City">Absecon City</option>
+                            <option value ="Allentown Borough">Allentown Borough</option>
+                            <option value ="Alloway Township">Alloway Township</option>
+                            <option value ="Andover Borough">Andover Borough</option>
+                            <option value ="Asbury Park City">Asbury Park City</option>
+                            <option value ="Atco">Atco</option>
+                            <option value ="Atlantic City">Atlantic City</option>
+                            <option value ="Atlantic Highlands Borough">Atlantic Highlands Borough</option>
+                            <option value ="Audubon Borough">Audubon Borough</option>
+                            <option value ="Avalon Borough">Avalon Borough</option>
+                            <option value ="Bargaintown">Bargaintown</option>
+                            <option value ="Barnegat">Barnegat</option>
+                            <option value ="Barnegat Township">Barnegat Township</option>
+                            <option value ="Barrington Borough">Barrington Borough</option>
+                            <option value ="Basking Ridge">Basking Ridge</option>
+                            <option value ="Bayonne">Bayonne</option>
+                            <option value ="Bayonne City">Bayonne City</option>
+                            <option value ="Bayville">Bayville</option>
+                            <option value ="Beach Haven Borough">Beach Haven Borough</option>
+                            <option value ="Beachwood">Beachwood</option>
+                            <option value ="Beachwood Borough">Beachwood Borough</option>
+                            <option value ="Belleville">Belleville</option>
+                            <option value ="Belleville Township">Belleville Township</option>
+                            <option value ="Bellmawr">Bellmawr</option>
+                            <option value ="Bellmawr Borough">Bellmawr Borough</option>
+                            <option value ="Belmar Borough">Belmar Borough</option>
+                            <option value ="Belvidere Town">Belvidere Town</option>
+                            <option value ="Bergenfield">Bergenfield</option>
+                            <option value ="Bergenfield Borough">Bergenfield Borough</option>
+                            <option value ="Berkeley Heights Township">Berkeley Heights Township</option>
+                            <option value ="Berkeley Township">Berkeley Township</option>
+                            <option value ="Berlin">Berlin</option>
+                            <option value ="Berlin Borough">Berlin Borough</option>
+                            <option value ="Berlin Township">Berlin Township</option>
+                            <option value ="Bernards Township">Bernards Township</option>
+                            <option value ="Beverly">Beverly</option>
+                            <option value ="Blackwood">Blackwood</option>
+                            <option value ="Blairstown Township">Blairstown Township</option>
+                            <option value ="Bloomfield">Bloomfield</option>
+                            <option value ="Bloomfield Township">Bloomfield Township</option>
+                            <option value ="Bogota Borough">Bogota Borough</option>
+                            <option value ="Boonton Town">Boonton Town</option>
+                            <option value ="Bordentown">Bordentown</option>
+                            <option value ="Bordentown City">Bordentown City</option>
+                            <option value ="Bound Brook Borough">Bound Brook Borough</option>
+                            <option value ="Bradley Beach Borough">Bradley Beach Borough</option>
+                            <option value ="Branchburg Township">Branchburg Township</option>
+                            <option value ="Branchville Borough">Branchville Borough</option>
+                            <option value ="Brick">Brick</option>
+                            <option value ="Brick Township">Brick Township</option>
+                            <option value ="Bridgeton">Bridgeton</option>
+                            <option value ="Bridgewater">Bridgewater</option>
+                            <option value ="Bridgewater Township">Bridgewater Township</option>
+                            <option value ="Brielle Borough">Brielle Borough</option>
+                            <option value ="Brigantine">Brigantine</option>
+                            <option value ="Brigantine City">Brigantine City</option>
+                            <option value ="Browns Mills">Browns Mills</option>
+                            <option value ="Buena Borough">Buena Borough</option>
+                            <option value ="Buena Vista Township">Buena Vista Township</option>
+                            <option value ="Burlington">Burlington</option>
+                            <option value ="Burlington City">Burlington City</option>
+                            <option value ="Burlington Township">Burlington Township</option>
+                            <option value ="Caldwell Borough">Caldwell Borough</option>
+                            <option value ="Califon Borough">Califon Borough</option>
+                            <option value ="Camden">Camden</option>
+                            <option value ="Camden City">Camden City</option>
+                            <option value ="Cape May">Cape May</option>
+                            <option value ="Cape May City">Cape May City</option>
+                            <option value ="Cape May Court House">Cape May Court House</option>
+                            <option value ="Carlstadt Borough">Carlstadt Borough</option>
+                            <option value ="Carneys Point">Carneys Point</option>
+                            <option value ="Carneys Point Township">Carneys Point Township</option>
+                            <option value ="Carteret">Carteret</option>
+                            <option value ="Carteret Borough">Carteret Borough</option>
+                            <option value ="Cedar Grove Township">Cedar Grove Township</option>
+                            <option value ="Chatham Borough">Chatham Borough</option>
+                            <option value ="Cherry Hill">Cherry Hill</option>
+                            <option value ="CHERRY HILL">CHERRY HILL</option>
+                            <option value ="Cherry Hill Township">Cherry Hill Township</option>
+                            <option value ="Chesilhurst Borough">Chesilhurst Borough</option>
+                            <option value ="Chester Borough">Chester Borough</option>
+                            <option value ="Chesterfield Township">Chesterfield Township</option>
+                            <option value ="Cinnaminson">Cinnaminson</option>
+                            <option value ="Cinnaminson Township">Cinnaminson Township</option>
+                            <option value ="City of Orange Township">City of Orange Township</option>
+                            <option value ="Clayton">Clayton</option>
+                            <option value ="Clayton Borough">Clayton Borough</option>
+                            <option value ="Clementon">Clementon</option>
+                            <option value ="Clementon Borough">Clementon Borough</option>
+                            <option value ="Cliffside Park Borough">Cliffside Park Borough</option>
+                            <option value ="Clifton">Clifton</option>
+                            <option value ="Clifton City">Clifton City</option>
+                            <option value ="Clinton Town">Clinton Town</option>
+                            <option value ="Clinton Township">Clinton Township</option>
+                            <option value ="Collingswood Borough">Collingswood Borough</option>
+                            <option value ="Colts Neck Township">Colts Neck Township</option>
+                            <option value ="Columbus">Columbus</option>
+                            <option value ="Commercial Township">Commercial Township</option>
+                            <option value ="Cranbury Township">Cranbury Township</option>
+                            <option value ="Cranford">Cranford</option>
+                            <option value ="Cranford Township">Cranford Township</option>
+                            <option value ="Deerfield Township">Deerfield Township</option>
+                            <option value ="Delanco Township">Delanco Township</option>
+                            <option value ="Delran">Delran</option>
+                            <option value ="Delran Township">Delran Township</option>
+                            <option value ="Dennis Township">Dennis Township</option>
+                            <option value ="Denville Township">Denville Township</option>
+                            <option value ="Deptford">Deptford</option>
+                            <option value ="Deptford Township">Deptford Township</option>
+                            <option value ="Dover">Dover</option>
+                            <option value ="Dover Town">Dover Town</option>
+                            <option value ="Downe Township">Downe Township</option>
+                            <option value ="Dumont">Dumont</option>
+                            <option value ="Dumont Borough">Dumont Borough</option>
+                            <option value ="Dunellen Borough">Dunellen Borough</option>
+                            <option value ="Eagleswood Township">Eagleswood Township</option>
+                            <option value ="Eastampton Township">Eastampton Township</option>
+                            <option value ="East Amwell Township">East Amwell Township</option>
+                            <option value ="East Brunswick">East Brunswick</option>
+                            <option value ="East Brunswick Township">East Brunswick Township</option>
+                            <option value ="East Greenwich Township">East Greenwich Township</option>
+                            <option value ="East Hanover Township">East Hanover Township</option>
+                            <option value ="East Orange">East Orange</option>
+                            <option value ="East Orange City">East Orange City</option>
+                            <option value ="East Rutherford Borough">East Rutherford Borough</option>
+                            <option value ="East Windsor">East Windsor</option>
+                            <option value ="East Windsor Township">East Windsor Township</option>
+                            <option value ="Eatontown">Eatontown</option>
+                            <option value ="Eatontown Borough">Eatontown Borough</option>
+                            <option value ="Edgewater Park Township">Edgewater Park Township</option>
+                            <option value ="Edison">Edison</option>
+                            <option value ="Edison Township">Edison Township</option>
+                            <option value ="Egg Harbor City">Egg Harbor City</option>
+                            <option value ="Egg Harbor Township">Egg Harbor Township</option>
+                            <option value ="Elizabeth">Elizabeth</option>
+                            <option value ="Elizabeth City">Elizabeth City</option>
+                            <option value ="Elmer">Elmer</option>
+                            <option value ="Elmer Borough">Elmer Borough</option>
+                            <option value ="Elmwood Park">Elmwood Park</option>
+                            <option value ="Elmwood Park Borough">Elmwood Park Borough</option>
+                            <option value ="Emerson Borough">Emerson Borough</option>
+                            <option value ="Englewood">Englewood</option>
+                            <option value ="Englewood City">Englewood City</option>
+                            <option value ="Englishtown">Englishtown</option>
+                            <option value ="Englishtown Borough">Englishtown Borough</option>
+                            <option value ="Erial">Erial</option>
+                            <option value ="Estell Manor City">Estell Manor City</option>
+                            <option value ="Evesham">Evesham</option>
+                            <option value ="Evesham Township">Evesham Township</option>
+                            <option value ="Ewing">Ewing</option>
+                            <option value ="Ewing Township">Ewing Township</option>
+                            <option value ="Fairfield Township">Fairfield Township</option>
+                            <option value ="Fair Lawn">Fair Lawn</option>
+                            <option value ="Fair Lawn Borough">Fair Lawn Borough</option>
+                            <option value ="Fanwood Borough">Fanwood Borough</option>
+                            <option value ="Farmingdale Borough">Farmingdale Borough</option>
+                            <option value ="Flemington">Flemington</option>
+                            <option value ="Flemington Borough">Flemington Borough</option>
+                            <option value ="Florence Township">Florence Township</option>
+                            <option value ="Forked River">Forked River</option>
+                            <option value ="Fort Lee Borough">Fort Lee Borough</option>
+                            <option value ="Franklin">Franklin</option>
+                            <option value ="Franklin Township">Franklin Township</option>
+                            <option value ="Franklinville">Franklinville</option>
+                            <option value ="Freehold">Freehold</option>
+                            <option value ="Freehold Borough">Freehold Borough</option>
+                            <option value ="Frenchtown Borough">Frenchtown Borough</option>
+                            <option value ="Galloway">Galloway</option>
+                            <option value ="Galloway Township">Galloway Township</option>
+                            <option value ="Garfield">Garfield</option>
+                            <option value ="Garfield City">Garfield City</option>
+                            <option value ="Glassboro">Glassboro</option>
+                            <option value ="Glassboro Borough">Glassboro Borough</option>
+                            <option value ="Glen Gardner Borough">Glen Gardner Borough</option>
+                            <option value ="Glen Rock Borough">Glen Rock Borough</option>
+                            <option value ="Gloucester">Gloucester</option>
+                            <option value ="Gloucester City">Gloucester City</option>
+                            <option value ="Gloucester Township">Gloucester Township</option>
+                            <option value ="Gloucester Twp">Gloucester Twp</option>
+                            <option value ="Green Brook Township">Green Brook Township</option>
+                            <option value ="Greenwich Township">Greenwich Township</option>
+                            <option value ="Hackensack">Hackensack</option>
+                            <option value ="Hackensack City">Hackensack City</option>
+                            <option value ="Hackettstown">Hackettstown</option>
+                            <option value ="Hackettstown Town">Hackettstown Town</option>
+                            <option value ="Haddonfield Borough">Haddonfield Borough</option>
+                            <option value ="Haddon Heights Borough">Haddon Heights Borough</option>
+                            <option value ="Haddon Township">Haddon Township</option>
+                            <option value ="Hainesport Township">Hainesport Township</option>
+                            <option value ="Haledon Borough">Haledon Borough</option>
+                            <option value ="Hamilton">Hamilton</option>
+                            <option value ="Hamilton Township">Hamilton Township</option>
+                            <option value ="Hammonton">Hammonton</option>
+                            <option value ="Hammonton Town">Hammonton Town</option>
+                            <option value ="Hampton Borough">Hampton Borough</option>
+                            <option value ="Hanover Township">Hanover Township</option>
+                            <option value ="Harding Township">Harding Township</option>
+                            <option value ="Hardyston Township">Hardyston Township</option>
+                            <option value ="Harrison Town">Harrison Town</option>
+                            <option value ="Harrison Township">Harrison Township</option>
+                            <option value ="Hasbrouck Heights">Hasbrouck Heights</option>
+                            <option value ="Hasbrouck Heights Borough">Hasbrouck Heights Borough</option>
+                            <option value ="Hawthorne">Hawthorne</option>
+                            <option value ="Hawthorne Borough">Hawthorne Borough</option>
+                            <option value ="Hazlet">Hazlet</option>
+                            <option value ="Hazlet Township">Hazlet Township</option>
+                            <option value ="Highland Park Borough">Highland Park Borough</option>
+                            <option value ="Hightstown">Hightstown</option>
+                            <option value ="Hightstown Borough">Hightstown Borough</option>
+                            <option value ="Hillsborough">Hillsborough</option>
+                            <option value ="Hillsborough Township">Hillsborough Township</option>
+                            <option value ="Hillside">Hillside</option>
+                            <option value ="Hillside Township">Hillside Township</option>
+                            <option value ="Holmdel">Holmdel</option>
+                            <option value ="Holmdel Township">Holmdel Township</option>
+                            <option value ="Hopatcong">Hopatcong</option>
+                            <option value ="Hopatcong Borough">Hopatcong Borough</option>
+                            <option value ="Hopewell Borough">Hopewell Borough</option>
+                            <option value ="Hopewell Township">Hopewell Township</option>
+                            <option value ="Howell">Howell</option>
+                            <option value ="Howell Township">Howell Township</option>
+                            <option value ="Irvington">Irvington</option>
+                            <option value ="Irvington Township">Irvington Township</option>
+                            <option value ="Jackson">Jackson</option>
+                            <option value ="JACKSON">JACKSON</option>
+                            <option value ="Jackson Township">Jackson Township</option>
+                            <option value ="Jamesburg Borough">Jamesburg Borough</option>
+                            <option value ="Jefferson Township">Jefferson Township</option>
+                            <option value ="Jersey City">Jersey City</option>
+                            <option value ="Keansburg">Keansburg</option>
+                            <option value ="Keansburg Borough">Keansburg Borough</option>
+                            <option value ="Kearny">Kearny</option>
+                            <option value ="Kearny Town">Kearny Town</option>
+                            <option value ="Kenilworth Borough">Kenilworth Borough</option>
+                            <option value ="Keyport">Keyport</option>
+                            <option value ="Keyport Borough">Keyport Borough</option>
+                            <option value ="Knowlton Township">Knowlton Township</option>
+                            <option value ="Lacey Township">Lacey Township</option>
+                            <option value ="Lafayette Township">Lafayette Township</option>
+                            <option value ="Lakehurst Borough">Lakehurst Borough</option>
+                            <option value ="Lakewood">Lakewood</option>
+                            <option value ="LAKEWOOD">LAKEWOOD</option>
+                            <option value ="Lakewood Township">Lakewood Township</option>
+                            <option value ="Lambertville City">Lambertville City</option>
+                            <option value ="Landing">Landing</option>
+                            <option value ="Laurel Springs Borough">Laurel Springs Borough</option>
+                            <option value ="Lavallette Borough">Lavallette Borough</option>
+                            <option value ="Lawnside">Lawnside</option>
+                            <option value ="Lawnside Borough">Lawnside Borough</option>
+                            <option value ="Lawrence Township">Lawrence Township</option>
+                            <option value ="Lebanon Borough">Lebanon Borough</option>
+                            <option value ="Lincoln Park Borough">Lincoln Park Borough</option>
+                            <option value ="Linden">Linden</option>
+                            <option value ="Linden City">Linden City</option>
+                            <option value ="Lindenwold">Lindenwold</option>
+                            <option value ="Linwood">Linwood</option>
+                            <option value ="Linwood City">Linwood City</option>
+                            <option value ="Little Egg Harbor Township">Little Egg Harbor Township</option>
+                            <option value ="Little Falls Township">Little Falls Township</option>
+                            <option value ="Little Ferry">Little Ferry</option>
+                            <option value ="Little Ferry Borough">Little Ferry Borough</option>
+                            <option value ="Livingston">Livingston</option>
+                            <option value ="Livingston Township">Livingston Township</option>
+                            <option value ="Lodi">Lodi</option>
+                            <option value ="Lodi Borough">Lodi Borough</option>
+                            <option value ="Logan Township">Logan Township</option>
+                            <option value ="Long Beach Township">Long Beach Township</option>
+                            <option value ="Long Branch">Long Branch</option>
+                            <option value ="Long Branch City">Long Branch City</option>
+                            <option value ="Long Hill Township">Long Hill Township</option>
+                            <option value ="Lower Township">Lower Township</option>
+                            <option value ="Lumberton">Lumberton</option>
+                            <option value ="Lumberton Township">Lumberton Township</option>
+                            <option value ="Lyndhurst">Lyndhurst</option>
+                            <option value ="Lyndhurst Township">Lyndhurst Township</option>
+                            <option value ="Madison Borough">Madison Borough</option>
+                            <option value ="Magnolia">Magnolia</option>
+                            <option value ="Magnolia Borough">Magnolia Borough</option>
+                            <option value ="Mahwah">Mahwah</option>
+                            <option value ="Mahwah Township">Mahwah Township</option>
+                            <option value ="Manahawkin">Manahawkin</option>
+                            <option value ="Manalapan">Manalapan</option>
+                            <option value ="Manalapan Township">Manalapan Township</option>
+                            <option value ="Manasquan Borough">Manasquan Borough</option>
+                            <option value ="Manchester">Manchester</option>
+                            <option value ="Manchester Township">Manchester Township</option>
+                            <option value ="Mansfield Township">Mansfield Township</option>
+                            <option value ="Mantua Township">Mantua Township</option>
+                            <option value ="Manville">Manville</option>
+                            <option value ="Manville Borough">Manville Borough</option>
+                            <option value ="Maple Shade">Maple Shade</option>
+                            <option value ="Maple Shade Township">Maple Shade Township</option>
+                            <option value ="Maplewood">Maplewood</option>
+                            <option value ="Maplewood Township">Maplewood Township</option>
+                            <option value ="Margate City">Margate City</option>
+                            <option value ="Marlboro">Marlboro</option>
+                            <option value ="Marlboro Township">Marlboro Township</option>
+                            <option value ="Marlton">Marlton</option>
+                            <option value ="Matawan">Matawan</option>
+                            <option value ="Matawan Borough">Matawan Borough</option>
+                            <option value ="Maurice River Township">Maurice River Township</option>
+                            <option value ="Mays Landing">Mays Landing</option>
+                            <option value ="Maywood Borough">Maywood Borough</option>
+                            <option value ="Medford">Medford</option>
+                            <option value ="Medford Township">Medford Township</option>
+                            <option value ="Metuchen Borough">Metuchen Borough</option>
+                            <option value ="Middlesex">Middlesex</option>
+                            <option value ="Middlesex Borough">Middlesex Borough</option>
+                            <option value ="Middle Township">Middle Township</option>
+                            <option value ="Middletown Township">Middletown Township</option>
+                            <option value ="Milford Borough">Milford Borough</option>
+                            <option value ="Millburn Township">Millburn Township</option>
+                            <option value ="Millstone Township">Millstone Township</option>
+                            <option value ="Millville">Millville</option>
+                            <option value ="Millville City">Millville City</option>
+                            <option value ="Mine Hill Township">Mine Hill Township</option>
+                            <option value ="Monroe">Monroe</option>
+                            <option value ="Monroe Township">Monroe Township</option>
+                            <option value ="Monroeville">Monroeville</option>
+                            <option value ="Montclair">Montclair</option>
+                            <option value ="Montclair Township">Montclair Township</option>
+                            <option value ="Montgomery">Montgomery</option>
+                            <option value ="Montgomery Township">Montgomery Township</option>
+                            <option value ="Montville Township">Montville Township</option>
+                            <option value ="Moonachie Borough">Moonachie Borough</option>
+                            <option value ="Moorestown">Moorestown</option>
+                            <option value ="Moorestown Township">Moorestown Township</option>
+                            <option value ="Morganville">Morganville</option>
+                            <option value ="Morristown">Morristown</option>
+                            <option value ="Morris Township">Morris Township</option>
+                            <option value ="Morristown Town">Morristown Town</option>
+                            <option value ="Mount Ephraim">Mount Ephraim</option>
+                            <option value ="Mount Ephraim Borough">Mount Ephraim Borough</option>
+                            <option value ="Mount Holly">Mount Holly</option>
+                            <option value ="Mount Holly Township">Mount Holly Township</option>
+                            <option value ="Mount Laurel">Mount Laurel</option>
+                            <option value ="Mount Laurel Township">Mount Laurel Township</option>
+                            <option value ="Mount Olive Township">Mount Olive Township</option>
+                            <option value ="Mullica Hill">Mullica Hill</option>
+                            <option value ="Mullica Township">Mullica Township</option>
+                            <option value ="National Park Borough">National Park Borough</option>
+                            <option value ="Neptune">Neptune</option>
+                            <option value ="Neptune City">Neptune City</option>
+                            <option value ="Neptune City Borough">Neptune City Borough</option>
+                            <option value ="Neptune Township">Neptune Township</option>
+                            <option value ="Newark">Newark</option>
+                            <option value ="NEWARK">NEWARK</option>
+                            <option value ="Newark City">Newark City</option>
+                            <option value ="New Brunswick">New Brunswick</option>
+                            <option value ="New Brunswick City">New Brunswick City</option>
+                            <option value ="Newfield">Newfield</option>
+                            <option value ="Newfield Borough">Newfield Borough</option>
+                            <option value ="New Hanover Township">New Hanover Township</option>
+                            <option value ="New Milford Borough">New Milford Borough</option>
+                            <option value ="Newton">Newton</option>
+                            <option value ="Newton Town">Newton Town</option>
+                            <option value ="North Arlington Borough">North Arlington Borough</option>
+                            <option value ="North Bergen">North Bergen</option>
+                            <option value ="North Bergen Township">North Bergen Township</option>
+                            <option value ="North Brunswick">North Brunswick</option>
+                            <option value ="North Brunswick Township">North Brunswick Township</option>
+                            <option value ="Northfield">Northfield</option>
+                            <option value ="Northfield City">Northfield City</option>
+                            <option value ="North Haledon Borough">North Haledon Borough</option>
+                            <option value ="North Plainfield">North Plainfield</option>
+                            <option value ="North Plainfield Borough">North Plainfield Borough</option>
+                            <option value ="Northvale Borough">Northvale Borough</option>
+                            <option value ="North Wildwood City">North Wildwood City</option>
+                            <option value ="Nutley">Nutley</option>
+                            <option value ="Nutley Township">Nutley Township</option>
+                            <option value ="Oakland Borough">Oakland Borough</option>
+                            <option value ="Oaklyn Borough">Oaklyn Borough</option>
+                            <option value ="Ocean City">Ocean City</option>
+                            <option value ="Oceanport Borough">Oceanport Borough</option>
+                            <option value ="Ocean Township">Ocean Township</option>
+                            <option value ="Old Bridge">Old Bridge</option>
+                            <option value ="Oldmans Township">Oldmans Township</option>
+                            <option value ="Palmyra Borough">Palmyra Borough</option>
+                            <option value ="Paramus">Paramus</option>
+                            <option value ="Paramus Borough">Paramus Borough</option>
+                            <option value ="Parlin">Parlin</option>
+                            <option value ="Parsippany">Parsippany</option>
+                            <option value ="Parsippany-Troy Hills Township">Parsippany-Troy Hills Township</option>
+                            <option value ="Passaic">Passaic</option>
+                            <option value ="Passaic City">Passaic City</option>
+                            <option value ="Paterson">Paterson</option>
+                            <option value ="Paterson City">Paterson City</option>
+                            <option value ="Paulsboro Borough">Paulsboro Borough</option>
+                            <option value ="Pemberton Borough">Pemberton Borough</option>
+                            <option value ="Pennington Borough">Pennington Borough</option>
+                            <option value ="Pennsauken">Pennsauken</option>
+                            <option value ="Pennsauken Township">Pennsauken Township</option>
+                            <option value ="Penns Grove">Penns Grove</option>
+                            <option value ="Penns Grove Borough">Penns Grove Borough</option>
+                            <option value ="Pennsville">Pennsville</option>
+                            <option value ="Pennsville Township">Pennsville Township</option>
+                            <option value ="Pequannock Township">Pequannock Township</option>
+                            <option value ="Perth Amboy">Perth Amboy</option>
+                            <option value ="Perth Amboy City">Perth Amboy City</option>
+                            <option value ="Phillipsburg">Phillipsburg</option>
+                            <option value ="Phillipsburg Town">Phillipsburg Town</option>
+                            <option value ="Pilesgrove Township">Pilesgrove Township</option>
+                            <option value ="Pine Beach Borough">Pine Beach Borough</option>
+                            <option value ="Pine Hill">Pine Hill</option>
+                            <option value ="Pine Hill Borough">Pine Hill Borough</option>
+                            <option value ="Piscataway">Piscataway</option>
+                            <option value ="Piscataway Township">Piscataway Township</option>
+                            <option value ="Pitman">Pitman</option>
+                            <option value ="Pitman Borough">Pitman Borough</option>
+                            <option value ="Pittsgrove Township">Pittsgrove Township</option>
+                            <option value ="Plainfield">Plainfield</option>
+                            <option value ="Plainfield City">Plainfield City</option>
+                            <option value ="Plainsboro Township">Plainsboro Township</option>
+                            <option value ="Pleasantville">Pleasantville</option>
+                            <option value ="Plumsted Township">Plumsted Township</option>
+                            <option value ="Point Pleasant">Point Pleasant</option>
+                            <option value ="Point Pleasant Beach Borough">Point Pleasant Beach Borough</option>
+                            <option value ="Point Pleasant Borough">Point Pleasant Borough</option>
+                            <option value ="Pompton Lakes Borough">Pompton Lakes Borough</option>
+                            <option value ="Port Republic City">Port Republic City</option>
+                            <option value ="Princeton">Princeton</option>
+                            <option value ="Rahway">Rahway</option>
+                            <option value ="Rahway City">Rahway City</option>
+                            <option value ="Ramsey Borough">Ramsey Borough</option>
+                            <option value ="Randolph">Randolph</option>
+                            <option value ="Randolph Township">Randolph Township</option>
+                            <option value ="Raritan Borough">Raritan Borough</option>
+                            <option value ="Readington Township">Readington Township</option>
+                            <option value ="Red Bank Borough">Red Bank Borough</option>
+                            <option value ="Ridgefield Borough">Ridgefield Borough</option>
+                            <option value ="Ridgefield Park Village">Ridgefield Park Village</option>
+                            <option value ="Ridgewood Village">Ridgewood Village</option>
+                            <option value ="Ringwood Borough">Ringwood Borough</option>
+                            <option value ="River Edge Borough">River Edge Borough</option>
+                            <option value ="Riverside">Riverside</option>
+                            <option value ="Robbinsville">Robbinsville</option>
+                            <option value ="Robbinsville Township">Robbinsville Township</option>
+                            <option value ="Rochelle Park Township">Rochelle Park Township</option>
+                            <option value ="Rockaway">Rockaway</option>
+                            <option value ="Rockaway Borough">Rockaway Borough</option>
+                            <option value ="Roselle">Roselle</option>
+                            <option value ="Roselle Park">Roselle Park</option>
+                            <option value ="Roselle Park Borough">Roselle Park Borough</option>
+                            <option value ="Roxbury Township">Roxbury Township</option>
+                            <option value ="Rumson Borough">Rumson Borough</option>
+                            <option value ="Runnemede">Runnemede</option>
+                            <option value ="Runnemede Borough">Runnemede Borough</option>
+                            <option value ="Rutherford Borough">Rutherford Borough</option>
+                            <option value ="Saddle Brook">Saddle Brook</option>
+                            <option value ="Saddle Brook Township">Saddle Brook Township</option>
+                            <option value ="Salem">Salem</option>
+                            <option value ="Salem City">Salem City</option>
+                            <option value ="Sayreville">Sayreville</option>
+                            <option value ="Sayreville Borough">Sayreville Borough</option>
+                            <option value ="Scotch Plains">Scotch Plains</option>
+                            <option value ="Scotch Plains Township">Scotch Plains Township</option>
+                            <option value ="Sea Girt Borough">Sea Girt Borough</option>
+                            <option value ="Seaside Park Borough">Seaside Park Borough</option>
+                            <option value ="Secaucus Town">Secaucus Town</option>
+                            <option value ="Sewell">Sewell</option>
+                            <option value ="Shamong Township">Shamong Township</option>
+                            <option value ="Ship Bottom Borough">Ship Bottom Borough</option>
+                            <option value ="Shrewsbury Borough">Shrewsbury Borough</option>
+                            <option value ="Sicklerville">Sicklerville</option>
+                            <option value ="SICKLERVILLE">SICKLERVILLE</option>
+                            <option value ="Somerdale">Somerdale</option>
+                            <option value ="Somerdale Borough">Somerdale Borough</option>
+                            <option value ="Somerset">Somerset</option>
+                            <option value ="Somers Point City">Somers Point City</option>
+                            <option value ="Somerville">Somerville</option>
+                            <option value ="Somerville Borough">Somerville Borough</option>
+                            <option value ="South Amboy">South Amboy</option>
+                            <option value ="South Amboy City">South Amboy City</option>
+                            <option value ="Southampton">Southampton</option>
+                            <option value ="Southampton Township">Southampton Township</option>
+                            <option value ="South Bound Brook Borough">South Bound Brook Borough</option>
+                            <option value ="South Brunswick">South Brunswick</option>
+                            <option value ="South Brunswick Township">South Brunswick Township</option>
+                            <option value ="South Orange Village Township">South Orange Village Township</option>
+                            <option value ="South Plainfield">South Plainfield</option>
+                            <option value ="South Plainfield Borough">South Plainfield Borough</option>
+                            <option value ="South Toms River Borough">South Toms River Borough</option>
+                            <option value ="Sparta">Sparta</option>
+                            <option value ="Sparta Township">Sparta Township</option>
+                            <option value ="Spotswood Borough">Spotswood Borough</option>
+                            <option value ="Springfield Township">Springfield Township</option>
+                            <option value ="Spring Lake Borough">Spring Lake Borough</option>
+                            <option value ="Stafford Township">Stafford Township</option>
+                            <option value ="Stanhope Borough">Stanhope Borough</option>
+                            <option value ="Stockton Borough">Stockton Borough</option>
+                            <option value ="Stratford">Stratford</option>
+                            <option value ="Stratford Borough">Stratford Borough</option>
+                            <option value ="Sussex Borough">Sussex Borough</option>
+                            <option value ="Swedesboro">Swedesboro</option>
+                            <option value ="Swedesboro Borough">Swedesboro Borough</option>
+                            <option value ="Tabernacle">Tabernacle</option>
+                            <option value ="Teaneck">Teaneck</option>
+                            <option value ="Teaneck Township">Teaneck Township</option>
+                            <option value ="Tinton Falls">Tinton Falls</option>
+                            <option value ="Tinton Falls Borough">Tinton Falls Borough</option>
+                            <option value ="Toms River">Toms River</option>
+                            <option value ="TOMS RIVER">TOMS RIVER</option>
+                            <option value ="Toms River Township">Toms River Township</option>
+                            <option value ="Totowa Borough">Totowa Borough</option>
+                            <option value ="Trenton">Trenton</option>
+                            <option value ="Trenton City">Trenton City</option>
+                            <option value ="Tuckerton Borough">Tuckerton Borough</option>
+                            <option value ="Turnersville">Turnersville</option>
+                            <option value ="Union">Union</option>
+                            <option value ="Union Beach Borough">Union Beach Borough</option>
+                            <option value ="Union Township">Union Township</option>
+                            <option value ="Upper Freehold Township">Upper Freehold Township</option>
+                            <option value ="Upper Pittsgrove Township">Upper Pittsgrove Township</option>
+                            <option value ="Upper Township">Upper Township</option>
+                            <option value ="Ventnor City">Ventnor City</option>
+                            <option value ="Vernon Township">Vernon Township</option>
+                            <option value ="Verona Township">Verona Township</option>
+                            <option value ="Villas">Villas</option>
+                            <option value ="Vineland">Vineland</option>
+                            <option value ="Vineland City">Vineland City</option>
+                            <option value ="Voorhees">Voorhees</option>
+                            <option value ="Voorhees Township">Voorhees Township</option>
+                            <option value ="Waldwick Borough">Waldwick Borough</option>
+                            <option value ="Wallington Borough">Wallington Borough</option>
+                            <option value ="Wall Township">Wall Township</option>
+                            <option value ="Wanaque Borough">Wanaque Borough</option>
+                            <option value ="Warren Township">Warren Township</option>
+                            <option value ="Washington">Washington</option>
+                            <option value ="Washington Borough">Washington Borough</option>
+                            <option value ="Washington Township">Washington Township</option>
+                            <option value ="Waterford Township">Waterford Township</option>
+                            <option value ="Wayne">Wayne</option>
+                            <option value ="Wayne Township">Wayne Township</option>
+                            <option value ="Wenonah">Wenonah</option>
+                            <option value ="Wenonah Borough">Wenonah Borough</option>
+                            <option value ="Westampton">Westampton</option>
+                            <option value ="Westampton Township">Westampton Township</option>
+                            <option value ="West Berlin">West Berlin</option>
+                            <option value ="West Caldwell Township">West Caldwell Township</option>
+                            <option value ="West Deptford">West Deptford</option>
+                            <option value ="West Deptford Township">West Deptford Township</option>
+                            <option value ="Westfield Town">Westfield Town</option>
+                            <option value ="West Long Branch Borough">West Long Branch Borough</option>
+                            <option value ="West Milford">West Milford</option>
+                            <option value ="West Milford Township">West Milford Township</option>
+                            <option value ="West New York Town">West New York Town</option>
+                            <option value ="West Orange">West Orange</option>
+                            <option value ="West Orange Township">West Orange Township</option>
+                            <option value ="Westville">Westville</option>
+                            <option value ="West Windsor">West Windsor</option>
+                            <option value ="West Windsor Township">West Windsor Township</option>
+                            <option value ="Westwood Borough">Westwood Borough</option>
+                            <option value ="Weymouth Township">Weymouth Township</option>
+                            <option value ="Wharton Borough">Wharton Borough</option>
+                            <option value ="Whiting">Whiting</option>
+                            <option value ="Wildwood">Wildwood</option>
+                            <option value ="Wildwood City">Wildwood City</option>
+                            <option value ="Wildwood Crest Borough">Wildwood Crest Borough</option>
+                            <option value ="Williamstown">Williamstown</option>
+                            <option value ="Willingboro">Willingboro</option>
+                            <option value ="WILLINGBORO">WILLINGBORO</option>
+                            <option value ="Willingboro Township">Willingboro Township</option>
+                            <option value ="Willingboro Twp">Willingboro Twp</option>
+                            <option value ="Winslow Township">Winslow Township</option>
+                            <option value ="Woodbine">Woodbine</option>
+                            <option value ="Woodbine Borough">Woodbine Borough</option>
+                            <option value ="Woodbridge">Woodbridge</option>
+                            <option value ="Woodbridge Township">Woodbridge Township</option>
+                            <option value ="Woodbridge Twp">Woodbridge Twp</option>
+                            <option value ="Woodbury">Woodbury</option>
+                            <option value ="Woodbury City">Woodbury City</option>
+                            <option value ="Woodbury Heights Borough">Woodbury Heights Borough</option>
+                            <option value ="Wood-Ridge Borough">Wood-Ridge Borough</option>
+                            <option value ="Woodstown">Woodstown</option>
+                            <option value ="Woodstown Borough">Woodstown Borough</option>
+                            <option value ="Woolwich Township">Woolwich Township</option>
+                            <option value ="Wrightstown Borough">Wrightstown Borough</option>
+                    </select>
+                </label>
+                </div>
+
+                <div class="select-container2">
+                <label>Electric Utility <!--May have to merge all non BPU and BPU selections-->
+                    <select name="Electric Utility" id="electricUtil" multiple>
+                            <option value="AC Electric">AC Electric</option>
+                            <option value="AmeriGas">AmeriGas</option>
+                            <option value="Boro of Milltown Elec">Borough of Milltown Electric</option> <!--fix-->
+                            <option value="Borough of Lavallette">Borough of Lavallette</option>
+                            <option value="Borough of Madison">Borough of Madison</option>
+                            <option value="Butler">Bulter</option>
+                            <option value="Conectiv">Conectiv</option>
+                            <option value="GPU BPU">GPU BPU</option>
+                            <option value="Heritage Propane">Heritage Propane</option>
+                            <option value="JCP&amp;L">JCP&amp;L</option>
+                            <option value="Milltown">Milltown</option>
+                            <option value="New Construction">New Construction</option>
+                            <option value="New Jersey Power">New Jersey Power</option>
+                            <option value="NJ Nat Gas BPU">NJ National Gas BPU</option> <!--fix-->
+                            <option value="NJR">NJR</option>
+                            <option value="Not Known">Not Known</option> <!--Must include NULL and Unknown as well--> 
+                            <option value="OCE">OCE</option>
+                            <option value="Orange &amp; Rockland Electric">Orange &amp; Rockland Electric</option> <!--Must include Rockland Elec-->
+                            <option value="Park Ridge">Park Ridge</option>
+                            <option value="Pemberton">Pemberton</option>
+                            <option value="Pemberton Borough Electric">Pemberton Borough Electric</option>
+                            <option value="PSE&amp;G">PSE&amp;G</option>
+                            <option value="PSE&amp;G BPU">PSE&amp;G BPU</option>
+                            <option value="Reliant Electric">Reliant Electric</option>
+                            <option value="Seaside Heights Electric">Seaside Heights Electric</option>
+                            <option value="SJ Gas">SJ Gas</option>
+                            <option value="South River">South River</option>
+                            <option value="Sussex Rural">Sussex Rural</option>
+                            <option value="Vineland Muni Electric">Vineland Muni Electric</option> <!--Must include Rockland Elec-->
+                    </select>
+                </label>
+                </div>
+
+                <div class="select-container3">
+                    <label>Customer Type
+                        <select name="Customer Type" id="custOpt" multiple>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Farm">Farm</option>
+                                <option value="Government Facility">Government</option>
+                                <option value="Municipality">Municipality</option>
+                                <option value="Non Profit">Non Profit</option>
+                                <option value="Private University">Private University</option>
+                                <option value="Public University">Public University</option>
+                                <option value="Residential">Residential</option>
+                                <option value="School Charter">School Charter</option>
+                                <option value="School Other">School Other</option>
+                                <option value="School Public K-12">School Public K-12</option>
+                                <option value="SUNLIT">SUNLIT</option>
+                        </select>
+                        </label>
+                </div>
+            </form>
+        </div>
+        <script>        
+            new SlimSelect({
+                select: '#municipOpt',  
+                settings: {
+                    placeholderText: '',
+                }
+            })
+            new SlimSelect({
+                select: '#electricUtil',
+                settings: {
+                    placeholderText: '',
+                }
+            })
+            new SlimSelect({
+                select: '#custOpt',
+                settings: {
+                    placeholderText: '',
+                }
+            })
+            const textbox1 = document.getElementById('test');
+            const textbox2 = document.getElementById('test2');
+            textbox2.value = 0;
+            const textbox3 = document.getElementById('test3');
+            const textbox4 = document.getElementById('test4');
+            const textbox5 = document.getElementById('test5');
+            const textbox6 = document.getElementById('test6');
+            const selection1 = document.getElementById('municipOpt');
+            const selection2 = document.getElementById('electricUtil');
+            const selection3 = document.getElementById('custOpt');
+            const submitBtn = document.getElementById('btn');
+            var queryMunicip1 = "";
+            var queryMunicip2 = "";
+            var queryMunicip3 = "";
+            var queryMunicip4 = "";
+            let Municipalities = "";
+            var queryelectUtil1 = "";
+            var queryelectUtil2 = "";
+            var queryelectUtil3 = "";
+            var queryelectUtil4 = "";
+            let electricUtil = "";
+            var queryCustType1 = "";
+            var queryCustType2 = "";
+            var queryCustType3 = "";
+            var queryCustType4 = "";
+            let custType = "";
+            let selectedVals1 = [];
+            let selectedVals2 = [];
+            let selectedVals3 = [];
+            let flag = 0;
+            let count = 0;
+            let count2 = 0;
+            const buttn = document.querySelector("#btn");
+
+            function myFunction() {
+                alert("Hello World!");
+            }
+
+            submitBtn.addEventListener("click", function(){
+                if((Municipalities !== "") || (electricUtil !== "") || (custType !== "")){
+                    document.getElementById('theWorks').submit();
+                }
+            });
+
+            selection1.addEventListener("change", function(){
+                Municipalities = "";
+                custType = "";
+                electricUtil = "";
+                queryMunicip1 = 'SELECT power.size_kw, customer.municipality, customer.app_id, customer.zip_code, customer.cust_type, customer.contractor ' 
+                + 'FROM Customer INNER JOIN Power ON Customer.app_id = Power.app_id '
+                + 'WHERE ';
+                queryMunicip2 = "";
+                queryMunicip3 = "";
+                queryMunicip4 = "";
+                flag = 0;
+                count = 0;
+                count2 = 0;
+                selectedVals1 = [];
+                for (let i = 0; i < selection1.options.length; i++) {
+                    if (selection1.options[i].selected && (flag === 0)) {
+                        selectedVals1.push(selection1.options[i].value);
+                        Municipalities += "(municipality = \'" + selection1.options[i].value + "\')";
+                        flag++;
+                        count2++;
+
+                        queryMunicip2 = "SELECT* FROM(SELECT subquery2_2.muni AS municipality, subquery2_2.elec AS Most_Popular_Electric_Utility, MAX(MPEU) AS Count "
+                        + "FROM (SELECT muni, elec, COUNT(elec) AS MPEU FROM (SELECT power.electric_utility AS elec, customer.municipality AS muni FROM Customer "
+                        + "INNER JOIN Power ON Customer.app_id = Power.app_id WHERE " + "(municipality = \'" + selection1.options[i].value + "\')) " 
+                        + "subquery2_1 GROUP BY subquery2_1.muni, subquery2_1.elec) subquery2_2 GROUP BY subquery2_2.muni, subquery2_2.elec LIMIT 1) AS sb" + count2;
+
+                        queryMunicip3 = "SELECT* FROM(SELECT subquery3_1.municipality, subquery3_1.cust_type AS Most_Popular_Customer_Type, MAX(subquery3_1.MPCT) AS Count "
+                        + "FROM (SELECT municipality, cust_type, COUNT(cust_type) AS MPCT FROM customer WHERE (municipality = \'" + selection1.options[i].value + "\') "
+                        + "GROUP BY municipality, cust_type) subquery3_1 GROUP BY subquery3_1.municipality, subquery3_1.cust_type ORDER BY Count DESC LIMIT 1) as sbm" + count2;
+
+                        queryMunicip4 = "SELECT* FROM (SELECT subquery.municipality, CAST(CAST(AVG(kw) AS NUMERIC(10,2)) AS REAL) AS Average_KW_usage FROM(SELECT power.size_kw AS kw," 
+                        + "customer.municipality FROM Customer INNER JOIN Power ON Customer.app_id = Power.app_id WHERE municipality = \'" + selection1.options[i].value + "\') "
+                        + "as subquery GROUP BY \"municipality\" ORDER BY \"municipality\") as sbq" + count2;
+                    } else if (selection1.options[i].selected && (flag !== 0)){
+                        selectedVals1.push(selection1.options[i].value);
+                        Municipalities += " or (municipality = \'" + selection1.options[i].value + "\')";
+                        count2++;
+
+                        queryMunicip2 += " UNION SELECT* FROM(SELECT subquery2_2.muni AS municipality, subquery2_2.elec AS Most_Popular_Electric_Utility, MAX(MPEU) AS Count "
+                        + "FROM (SELECT muni, elec, COUNT(elec) AS MPEU FROM (SELECT power.electric_utility AS elec, customer.municipality AS muni FROM Customer "
+                        + "INNER JOIN Power ON Customer.app_id = Power.app_id WHERE " + "(municipality = \'" + selection1.options[i].value + "\')) " 
+                        + "subquery2_1 GROUP BY subquery2_1.muni, subquery2_1.elec) subquery2_2 GROUP BY subquery2_2.muni, subquery2_2.elec LIMIT 1) AS sb" + count2;
+
+                        queryMunicip3 += " UNION SELECT* FROM(SELECT subquery3_1.municipality, subquery3_1.cust_type AS Most_Popular_Customer_Type, MAX(subquery3_1.MPCT) AS Count "
+                        + "FROM (SELECT municipality, cust_type, COUNT(cust_type) AS MPCT FROM customer WHERE (municipality = \'" + selection1.options[i].value + "\') "
+                        + "GROUP BY municipality, cust_type) subquery3_1 GROUP BY subquery3_1.municipality, subquery3_1.cust_type ORDER BY Count DESC LIMIT 1) as sbm" + count2;
+
+                        queryMunicip4 += " UNION SELECT* FROM (SELECT subquery.municipality, CAST(CAST(AVG(kw) AS NUMERIC(10,2)) AS REAL) AS Average_KW_usage FROM(SELECT power.size_kw AS kw," 
+                        + "customer.municipality FROM Customer INNER JOIN Power ON Customer.app_id = Power.app_id WHERE municipality = \'" + selection1.options[i].value + "\') "
+                        + "as subquery GROUP BY \"municipality\" ORDER BY \"municipality\") as sbq" + count2;
+                    }
+                }
+
+                if((Municipalities !== "")){
+                    selection2.disabled = true;
+                    selection3.disabled = true;
+                    
+                } else{
+                    selection2.disabled = false;
+                    selection3.disabled = false;
+                    
+                }
+
+                Municipalities += ';';
+                queryMunicip1 += Municipalities;
+                textbox1.value = queryMunicip1;
+                count = selectedVals1.length;
+                textbox2.value = count;
+                textbox3.value = queryMunicip2 + ";";
+                textbox4.value = queryMunicip3 + ";";
+                textbox5.value = queryMunicip4 + ";";
+                textbox6.value = "1";
+            });
+
+            selection2.addEventListener("change", function(){
+                electricUtil = "";
+                Municipalities = "";
+                custType = "";
+                queryelectUtil1 = 'SELECT power.size_kw, power.electric_utility, customer.municipality, customer.app_id, customer.zip_code, customer.cust_type, customer.contractor ' 
+                + 'FROM Customer INNER JOIN Power ON Customer.app_id = Power.app_id '
+                + 'WHERE ';
+                queryelectUtil2 = "";
+                queryelectUtil3 = "";
+                queryelectUtil4 = "";
+                flag = 0;
+                count = 0;
+                count2 = 0;
+                selectedVals2 = [];
+                for (let i = 0; i < selection2.options.length; i++) {
+                    if (selection2.options[i].selected && (flag === 0)) {
+                        selectedVals2.push(selection2.options[i].value);
+                        electricUtil += "(electric_utility = \'" + selection2.options[i].value + "\')";
+                        flag++;
+                        count2++;
+
+                        queryelectUtil2 = "SELECT* FROM(SELECT subquery3_1.electric_utility, subquery3_1.cust_type AS Most_Popular_Customer_Type, MAX(subquery3_1.MPCT) AS Count "
+                        + "FROM (SELECT power.electric_utility, customer.cust_type, COUNT(customer.cust_type) AS MPCT FROM customer INNER JOIN power ON Customer.app_id = Power.app_id WHERE (electric_utility = \'" + selection2.options[i].value + "\') "
+                        + "GROUP BY power.electric_utility, customer.cust_type) subquery3_1 GROUP BY subquery3_1.electric_utility, subquery3_1.cust_type ORDER BY Count DESC LIMIT 1) as sbeu" + count2;
+
+                        queryelectUtil3 = "SELECT* FROM(SELECT subquery3_1.electric_utility, subquery3_1.municipality AS Municipality_with_Highest, MAX(subquery3_1.MPCT) AS Count "
+                        + "FROM (SELECT power.electric_utility, customer.municipality, COUNT(power.electric_utility) AS MPCT FROM customer INNER JOIN power ON Customer.app_id = Power.app_id WHERE "
+                        + "(electric_utility = \'" + selection2.options[i].value + "\') GROUP BY power.electric_utility, customer.municipality) subquery3_1 GROUP BY subquery3_1.electric_utility, "
+                        + "subquery3_1.municipality ORDER BY Count DESC LIMIT 1) as sbeum" + count2;
+
+                        queryelectUtil4 = "SELECT* FROM (SELECT subquery.electric_utility, CAST(CAST(AVG(kw) AS NUMERIC(10,2)) AS REAL) AS Average_KW_usage FROM(SELECT size_kw AS kw," 
+                        + "electric_utility FROM Power WHERE electric_utility  = \'" + selection2.options[i].value + "\') "
+                        + "as subquery GROUP BY subquery.electric_utility ORDER BY subquery.electric_utility) as sbqq" + count2;
+
+                    } else if (selection2.options[i].selected && (flag !== 0)){
+                        selectedVals2.push(selection2.options[i].value);
+                        electricUtil += " or (electric_utility = \'" + selection2.options[i].value + "\')";
+                        count2++;
+
+                        queryelectUtil2 += " UNION SELECT* FROM(SELECT subquery3_1.electric_utility, subquery3_1.cust_type AS Most_Popular_Customer_Type, MAX(subquery3_1.MPCT) AS Count "
+                        + "FROM (SELECT power.electric_utility, customer.cust_type, COUNT(customer.cust_type) AS MPCT FROM customer INNER JOIN power ON Customer.app_id = Power.app_id WHERE (electric_utility = \'" + selection2.options[i].value + "\') "
+                        + "GROUP BY power.electric_utility, customer.cust_type) subquery3_1 GROUP BY subquery3_1.electric_utility, subquery3_1.cust_type ORDER BY Count DESC LIMIT 1) as sbeu" + count2;
+
+                        queryelectUtil3 += " UNION SELECT* FROM(SELECT subquery3_1.electric_utility, subquery3_1.municipality AS Municipality_with_Highest, MAX(subquery3_1.MPCT) AS Count "
+                        + "FROM (SELECT power.electric_utility, customer.municipality, COUNT(power.electric_utility) AS MPCT FROM customer INNER JOIN power ON Customer.app_id = Power.app_id WHERE "
+                        + "(electric_utility = \'" + selection2.options[i].value + "\') GROUP BY power.electric_utility, customer.municipality) subquery3_1 GROUP BY subquery3_1.electric_utility, "
+                        + "subquery3_1.municipality ORDER BY Count DESC LIMIT 1) as sbeum" + count2;
+
+                        queryelectUtil4 += " UNION SELECT* FROM (SELECT subquery.electric_utility, CAST(CAST(AVG(kw) AS NUMERIC(10,2)) AS REAL) AS Average_KW_usage FROM(SELECT size_kw AS kw," 
+                        + "electric_utility FROM Power WHERE electric_utility  = \'" + selection2.options[i].value + "\') "
+                        + "as subquery GROUP BY subquery.electric_utility ORDER BY subquery.electric_utility) as sbqq" + count2;
+                    }
+                }
+
+                if((electricUtil !== "")){
+                    selection1.disabled = true;
+                    selection3.disabled = true;
+                } else{
+                    selection1.disabled = false;
+                    selection3.disabled = false;
+                }
+
+                electricUtil += ';';
+                queryelectUtil1 += electricUtil;
+                textbox1.value = queryelectUtil1;
+                count = selectedVals2.length;
+                textbox2.value = count;
+                textbox3.value = queryelectUtil2 + ";";
+                textbox4.value = queryelectUtil3 + ";";
+                textbox5.value = queryelectUtil4 + ";";
+                textbox6.value = "2";
+            });
+
+            selection3.addEventListener("change", function(){
+                custType = "";
+                electricUtil = "";
+                Municipalities = "";
+                queryCustType1 = 'SELECT power.size_kw, customer.cust_type, customer.municipality, customer.app_id, customer.zip_code, customer.contractor ' 
+                + 'FROM Customer INNER JOIN Power ON Customer.app_id = Power.app_id '
+                + 'WHERE ';
+                queryCustType2 = "";
+                queryCustType3 = "";
+                queryCustType4 = "";
+                flag = 0;
+                count = 0;
+                count2 = 0;
+                selectedVals3 = [];
+                for (let i = 0; i < selection3.options.length; i++) {
+                    if (selection3.options[i].selected && (flag === 0)) {
+                        selectedVals3.push(selection3.options[i].value);
+                        custType += "(cust_type = \'" + selection3.options[i].value + "\')";
+                        flag++;
+                        count2++;
+
+                        queryCustType2 = "SELECT* FROM(SELECT  subquery3_1.cust_type, subquery3_1.municipality AS Muncip_With_Most_Cust, MAX(subquery3_1.MPCT) AS Count "
+                        + "FROM (SELECT municipality, cust_type, COUNT(cust_type) AS MPCT FROM customer WHERE (cust_type = \'" + selection3.options[i].value + "\') "
+                        + "GROUP BY municipality, cust_type) subquery3_1 GROUP BY subquery3_1.municipality, subquery3_1.cust_type ORDER BY Count DESC LIMIT 1) as sbmcc" + count2;
+
+                        queryCustType3 = "SELECT* FROM(SELECT subquery3_1.cust_type, subquery3_1.electric_utility AS Most_Popular_EU, MAX(subquery3_1.MPEU) AS Count "
+                        + "FROM (SELECT customer.cust_type, power.electric_utility, COUNT(power.electric_utility) AS MPEU FROM customer INNER JOIN power ON Customer.app_id = Power.app_id WHERE (cust_type = \'" + selection3.options[i].value + "\') "
+                        + "GROUP BY customer.cust_type, power.electric_utility) subquery3_1 GROUP BY subquery3_1.cust_type, subquery3_1.electric_utility ORDER BY Count DESC LIMIT 1) as sbcteu" + count2;
+
+                        queryCustType4 = "SELECT* FROM (SELECT subquery.cust_type, CAST(CAST(AVG(kw) AS NUMERIC(10,2)) AS REAL) AS Average_KW_usage FROM(SELECT power.size_kw AS kw," 
+                        + "customer.cust_type FROM Customer INNER JOIN Power ON Customer.app_id = Power.app_id WHERE cust_type = \'" + selection3.options[i].value + "\') "
+                        + "as subquery GROUP BY \"cust_type\" ORDER BY \"cust_type\") as sbkwct" + count2;
+
+                    } else if (selection3.options[i].selected && (flag !== 0)){
+                        selectedVals3.push(selection3.options[i].value);
+                        custType += " or (cust_type = \'" + selection3.options[i].value + "\')";
+                        count2++;
+
+                        queryCustType2 += " UNION SELECT* FROM(SELECT subquery3_1.cust_type, subquery3_1.municipality AS Muncip_With_Most_Cust, MAX(subquery3_1.MPCT) AS Count "
+                        + "FROM (SELECT municipality, cust_type, COUNT(cust_type) AS MPCT FROM customer WHERE (cust_type = \'" + selection3.options[i].value + "\') "
+                        + "GROUP BY municipality, cust_type) subquery3_1 GROUP BY subquery3_1.municipality, subquery3_1.cust_type ORDER BY Count DESC LIMIT 1) as sbmcc" + count2;
+
+                        queryCustType3 += " UNION SELECT* FROM(SELECT subquery3_1.cust_type, subquery3_1.electric_utility AS Most_Popular_EU, MAX(subquery3_1.MPEU) AS Count "
+                        + "FROM (SELECT customer.cust_type, power.electric_utility, COUNT(power.electric_utility) AS MPEU FROM customer INNER JOIN power ON Customer.app_id = Power.app_id WHERE (cust_type = \'" + selection3.options[i].value + "\') "
+                        + "GROUP BY customer.cust_type, power.electric_utility) subquery3_1 GROUP BY subquery3_1.cust_type, subquery3_1.electric_utility ORDER BY Count DESC LIMIT 1) as sbcteu" + count2;
+
+                        queryCustType4 += " UNION SELECT* FROM (SELECT subquery.cust_type, CAST(CAST(AVG(kw) AS NUMERIC(10,2)) AS REAL) AS Average_KW_usage FROM(SELECT power.size_kw AS kw," 
+                        + "customer.cust_type FROM Customer INNER JOIN Power ON Customer.app_id = Power.app_id WHERE cust_type = \'" + selection3.options[i].value + "\') "
+                        + "as subquery GROUP BY \"cust_type\" ORDER BY \"cust_type\") as sbkwct" + count2;
+                    }
+                }
+
+                if((custType !== "")){
+                    selection1.disabled = true;
+                    selection2.disabled = true;
+                } else{
+                    selection1.disabled = false;
+                    selection2.disabled = false;
+                }
+
+                custType += ';';
+                queryCustType1 += custType;
+                textbox1.value = queryCustType1;
+                count = selectedVals3.length;
+                textbox2.value = count;
+                textbox3.value = queryCustType2 + ";";
+                textbox4.value = queryCustType3 + ";";
+                textbox5.value = queryCustType4 + ";";
+                textbox6.value = "3";
+            });
+        </script>
+    </body>
+</html>

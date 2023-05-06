@@ -1,0 +1,134 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:white;
+    display: block;
+}
+
+.backimg {
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    /* animation-name: fade-in-img;
+    animation-duration: 2s;
+    animation-fill-mode: forwards; */
+}
+
+.filter:before {
+    z-index: 1;
+    content: '';
+    position: fixed;
+    background: rgba(77,255,255, 0.42);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.filter table{
+    z-index: 2;
+    position: relative;
+    left:25%;
+    width: 50%;
+    text-align: center;
+    padding-top: 35px;
+}
+
+.filter table td{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+}
+
+
+.filter table th{
+    font-family: 'Bebas Neue', cursive;
+    border: 1px solid black;
+}
+
+.filter .table-4{
+    z-index: 2;
+    position: relative;
+    left:10%;
+    width: 80%;
+    text-align: center;
+}
+
+.filter .table-1{
+    padding-top: 65px;
+}
+
+.filter a{
+    z-index: 81;
+    position: absolute;
+    top: 3%;
+    left: 80%;
+    text-transform: uppercase;
+}
+
+.TCNJ{
+    z-index: 81;
+    position: absolute;
+    width: 10%;
+    height: auto;
+    top: .78%;
+    left: 0;
+    animation-name: fade-in-img;
+    animation-duration: 0.7s;
+    animation-timing-function:ease;
+    animation-fill-mode: forwards;
+}
+
+.SNJ{
+    z-index: 81;
+    position: absolute;
+    width: 6.8%;
+    height: auto;
+    top: 2%;
+    left: 10%;
+    animation-name: fade-in-img;
+    animation-duration: 0.7s;
+    animation-timing-function:ease;
+    animation-fill-mode: forwards;
+}
+
+.btn {
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+    background-color: white;
+    font-size: 2.7em;
+    font-weight: 400;
+    border: 3px solid #000;
+    border-radius: 5px;
+    color:black;
+    padding: 10px 25px 10px 25px;
+    letter-spacing: 3px;
+    transition: border 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    border: 3px solid #FFF;
+    background-color: black;
+    color: white;
+
+}
+
+@keyframes fade-in-img{
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

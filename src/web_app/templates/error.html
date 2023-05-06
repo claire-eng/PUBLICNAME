@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/error.css') }}?v={{ random_string }}">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ERROR</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        </style>          
+    </head>
+    <body>
+        <div class ="Content">
+            <img src="{{ url_for('static', filename='images/R.png') }}" alt="Sustainable New Jersey Logo" class="SNJ">
+            <img src="{{ url_for('static', filename='images/TCNJ-Comp-FULL-B-RGB.png') }}" alt="TCNJ Logo" class="TCNJ">
+	        <h1>ERROR 500</h1>
+            <h4>Please Select an Option from Any of the Dropdowns.</h4>
+            <a href="{{ url_for('query') }}" class="btn">Back</a>
+        </div>
+    </body>
+</html>

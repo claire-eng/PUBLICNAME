@@ -1,0 +1,84 @@
+body{
+    overflow: hidden;
+    background-color: #000;
+}
+
+.Content h1{
+    color: #FFF;
+    position: absolute;
+    font-family: 'Inconsolata', monospace;
+    left: 25%;
+    top: 20%;
+    font-size: 11.15em;
+}
+.Content h4{
+    color: #FFF;
+    position: absolute;
+    font-family: 'Inconsolata', monospace;
+    left: 24%;
+    top: 55%;
+    font-size: 2.15em;
+}
+
+.Content a{
+    z-index: 81;
+    position: absolute;
+    animation-name: slide-in-r;
+    animation-duration: 3.5s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+    top: 69%;
+    right: 50%;
+    text-transform: uppercase;
+}
+
+.btn {
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+    background-color: white;
+    font-size: 2.7em;
+    font-weight: 400;
+    border: 3px solid #000;
+    border-radius: 5px;
+    color:black;
+    padding: 10px 30px 10px 30px;
+    letter-spacing: 3px;
+    transition: border 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    border: 3px solid #FFF;
+    background-color: black;
+    color: white;
+}
+
+
+.Content .TCNJ{
+    z-index: 81;
+    position: absolute;
+    width: 10%;
+    height: auto;
+    top: 88%;
+    left: 0;
+}
+
+.Content .SNJ{
+    z-index: 81;
+    position: absolute;
+    width: 6.8%;
+    height: auto;
+    top: 90%;
+    left: 10%;
+}
+
+@keyframes slide-in-r{
+    0%{
+        right: -100%;
+    }
+    100% {
+        right: 8.2%;
+    }
+}
